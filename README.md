@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Crypto World
+
+![CryptoWorld](https://i.ibb.co/jWTGKrv/Crypto-World.png)
+
+## Introduction
+In this project I have created a website where you can find statistics and the latest news about crypto currencies. I used React with Redux and RTK Query for data fetching from CoinRanking API and Bing News Search API. The project is based on a components library Ant-Design and is fully responsive.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
