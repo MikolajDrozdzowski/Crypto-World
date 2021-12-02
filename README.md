@@ -6,7 +6,7 @@ https://crypto-world-md-project.netlify.app/
 ![CryptoWorld](https://i.ibb.co/jWTGKrv/Crypto-World.png)
 
 ## Introduction
-In this project I have created a website which displays statistics and the latest news about crypto currencies. I used React with Redux and RTK Query for data fetching from CoinRanking API and Bing News Search API. The project is based on a components library Ant-Design and is fully responsive.
+In this project I have created a website which displays statistics and the latest news about cryptocurrencies. I have used React with Redux and RTK Query for fetching data from CoinRanking API and Bing News Search API. This project is based on a components library Ant-Design and is fully responsive. The website utilizes React-Router for routing.
 
 ## Getting Started with Create React App
 
