@@ -6,16 +6,20 @@ import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Cryptocurrencies, News } from "../components";
 import Loader from "./Loader";
+import Error from "./Error";
 
 const { Title } = Typography;
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
+  const { data, isFetching, isError } = useGetCryptosQuery(9);
   const globalStats = data?.data?.stats;
+
+  
 
   if (isFetching) {
     return <Loader />;
   }
+  if (isError) return <Error />
 
   return (
     <>

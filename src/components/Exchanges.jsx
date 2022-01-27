@@ -5,16 +5,17 @@ import HTMLReactParser from "html-react-parser";
 
 import { useGetExchangesQuery } from "../services/cryptoApi";
 import Loader from "./Loader";
+import Error from "./Error";
 
 const { Text } = Typography;
 const { Panel } = Collapse;
 
 const Exchanges = () => {
-  const { data, isFetching } = useGetExchangesQuery();
+  const { data, isFetching, isError } = useGetExchangesQuery();
   const exchangesList = data?.data?.exchanges;
 
   if (isFetching) return <Loader />;
-
+  if (isError) return <Error />
   return (
     <>
       <Row>

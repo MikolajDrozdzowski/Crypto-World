@@ -5,10 +5,11 @@ import { Card, Row, Col, Input } from "antd";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import Loader from "./Loader";
+import Error from "./Error";
 
 const Cryptocurrencies = ({ simplified }) => {
-  const count = simplified ? 10 : 100;
-  const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
+  const count = simplified ? 9 : 100;
+  const { data: cryptosList, isFetching, isError } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -20,6 +21,8 @@ const Cryptocurrencies = ({ simplified }) => {
   }, [cryptosList, searchTerm]);
 
   if (isFetching) return <Loader />;
+  if (isError) return <Error />
+  
 
   return (
     <>
@@ -34,8 +37,8 @@ const Cryptocurrencies = ({ simplified }) => {
 
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
-            <Link to={`/crypto/${currency.id}`}>
+          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.uuid}>
+            <Link to={`/crypto/${currency.uuid}`}>
               <Card
                 title={`${currency.rank}. ${currency.name}`}
                 extra={
